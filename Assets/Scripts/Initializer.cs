@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class Initializer : MonoBehaviour
 {
-    public WindowController windowController;
-    public GameObject stub;
+    [SerializeField]
+    private GameObject stub;
+
+    [SerializeField]
+    private GameObject windowRoot;
     private void Awake()
     {
-        windowController.LoadMainWindow();
-        stub.SetActive(false);
+        LoadingScreen.Instance.StartGameLoad();
     }
 }
